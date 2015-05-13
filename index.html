@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="author" content="Michael Gray">
+    <meta name="description" content="Your best reference for information on movies and actors">
+    <title>MovieBug by Michael Gray</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/themoviedb.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+    
+    <script src="./js/app.js"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+</head>
+
+<body>
+    <div id="form">
+        <div class="col-md-6" id="threeDBug">
+            <img id="ladybug" src="./images/ladybug.png">
+            <img id="glasses" src="./images/3dglasses.png">
+        </div>
+        <div class="col-md-6">
+            <!-- <header> -->
+            <h1><span class="green">M</span>ovie<span class="red">B</span>ug</h1>
+            <div class="inset"></div>
+        </div>
+        <!-- </header> -->
+        <label for="movieNameInput" class="col-sm-2 control-label">Movie Name:</label>
+        <div class="col-sm-10">
+            <input id="movieNameInput" class="form-control" type="text" placeholder="e.g. Furious 7" />
+        </div>
+        <label for="movieYearInput" class="labelYear col-sm-2 control-label">Year:</label>
+        <div class="col-sm-10">
+            <input id="movieYearInput" class="form-control" type="text" placeholder="e.g. 2015" />
+        </div>
+        <div class="col-sm-12">
+            <button class="btn btn-large btn-primary" id="searchBtn">Search</button>
+        </div>
+
+    </div>
+    <p id="results"></p>
+    <br /><span class="created">Created by </span><a href="http://graycreations.com">Michael Gray</a>
+
+</body>
+
+</html>
