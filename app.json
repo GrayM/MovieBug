@@ -1,0 +1,7 @@
+{
+  "name": "MovieBug",
+  "description": "A movie and actor search app using themoviedb.org API",
+  "repository": "https://github.com/GrayM/MovieBug.git",
+  "logo": "",
+  "keywords": ["node", "express", "static"]
+}
