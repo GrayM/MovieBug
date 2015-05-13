@@ -1,0 +1,28 @@
+{
+  "name": "MovieBug",
+  "version": "1.0.0",
+  "description": "A movie and actor search app using themoviedb.org API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GrayM/MovieBug.git"
+  },
+  "keywords": [
+    "demo",
+    "heroku",
+    "moviebug"
+  ],
+  "author": "Michael Gray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GrayM/MovieBug/issues"
+  },
+  "homepage": "https://github.com/GrayM/MovieBug",
+  "engines": {
+    "node": "0.12.2"
+  }
+}

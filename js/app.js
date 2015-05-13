@@ -95,3 +95,5 @@ $(document).ready(function() {
     });
 
 });
+server.listen(process.env.PORT);
+console.log("Express server started on"+server.listen(process.env.PORT));
