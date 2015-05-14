@@ -8,30 +8,30 @@ $(document).ready(function() {
     var getPoster = function() {
         var film = $('#movieNameInput').val();
         if (film == '') {
-            $('#results').html("<h3 class='loading'>Now how am I supposed to search for that!?</h3>");
+            $('#results').html("<h3 class='loading'>Bzzzt... are you sure you typed something? Bzzt!</h3>");
         } else {
             $('#results').html("<h3 class='loading'>Searching database for " + film + "..." + "</h3>");
         }
     }
-        // callback for getConfiguration call error
-    // function configErrorCallback(data) {
-    //         'use strict';
-    //         $('#results').text('Error getting TMDb configuration! ' + JSON.parse(data).status_message);
-    //     }
     function successCallback(data) {
             'use strict';
-
             $('#results').text('');
             data = JSON.parse(data);
             if (data.results && data.results.length > 0) {
-                var imageURL = theMovieDb.common.images_uri + 'w300' + data.results[0].poster_path;
+                var baseURL = theMovieDb.common.base_uri;
+                var posterURL = theMovieDb.common.images_uri + 'w300' + data.results[0].poster_path;
+                $.get(baseURL + 'movie/top_rated', function(data) {
+                    $('#results').html(data);
+                    alert('load');
+                });
                 $('#results').append('<h4>Here you go, insect!</h4></br />')
                 $('#results').append('Title: <b>' + data.results[0].title + '</b><br />');
-                $('#results').append('Movie Id: ' + data.results[0].id + '<br />');
-                $('#results').append('<img src="' + imageURL + '" />');
+                $('#results').append('Release date: <b>' + data.results[0].release_date + '</b><br />');
+                $('#results').append('Movie Id: <b>' + data.results[0].id + '</b><br />');
+                $('#results').append('<img src="' + posterURL + '" />');
             } else {
-                $('#results').append('<h4>I couldn\'t find nuthin... quit buggin me!</h4>');
-                console.log('Th\'arr be no movies in this here database, matey!');
+                $('#results').append('<h4>I couldn\'t find nuthin... quit buggin\' me!</h4>');
+                console.log('No results');
             }
         }
         // callback for movie search error
@@ -68,7 +68,7 @@ $(document).ready(function() {
                 options = {
                     "query": searchTerm
                 };
-            //options.query = searchTerm;
+            // options.query = searchTerm;
             if (!isNaN(searchYear)) {
                 options.year = searchYear;
             }
